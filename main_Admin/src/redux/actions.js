@@ -1,82 +1,85 @@
 import * as types from './actionType';
 import axios from 'axios'
 
-const getUsers = (users)=>({
-    type: types.GET_USER,
-    payload: users,
+const getProducts = (products)=>({
+  type: types.GET_PRODUCT,
+  payload: products,
 });
 
-const userDeleted = ()=>({
-  type: types.DELETE_USER,
+const ProductDeleted = ()=>({
+  type: types.DELETE_PRODUCT,
 })
 
-const userAdded = ()=>({
-  type: types.ADD_USER,
+const productAdded = ()=>({
+  type: types.ADD_PRODUCT,
 })
 
-const userUpdated = ()=>({
-  type: types.UPDATE_USER,
+const productUpdated = ()=>({
+  type: types.UPDATE_PRODUCT,
 })
 
-const getUser = (user)=>({
-  type: types.GET_SINGLE_USER,
-  payload:user,
+const getproduct = (product)=>({
+  type: types.GET_SINGLE_PRODUCT,
+  payload:product,
 })
 
-export const  loadUsers = ()=>{
+
+
+export const  loadProducts = ()=>{
   return function(dispatch){
-    axios.get(`${process.env.REACT_APP_API}`).then((resp)=>{
-        console.log("resp", resp)
-        dispatch(getUsers(resp.data));
-    })
-    .catch((error)=> console.log(error));
-  }
-}
-
-export const deleteUser = (id)=>{
-  return function(dispatch){
-    axios.delete(`${process.env.REACT_APP_API}/${id}`)
+    axios.get(`${process.env.REACT_APP_API}`)
     .then((resp)=>{
-        console.log("resp", resp)
-        dispatch(userDeleted(id));
-        dispatch(loadUsers());
-    })
-    .catch((error)=> console.log(error));
-  }
-}
-
-export const addUser = (user)=>{
-  return function(dispatch){
-    axios.post(`${process.env.REACT_APP_API}`,user)
-    .then((resp)=>{
-        console.log("resp", resp)
-        dispatch(userAdded());
-        dispatch(loadUsers());
-    })
-    .catch((error)=> console.log(error));
-  }
-}
-
-export const getSingleUser = (id)=>{
-  return function(dispatch){
-    axios.get(`${process.env.REACT_APP_API}/${id}`)
-    .then((resp)=>{
-        console.log("resp", resp)
-        dispatch(getUser(resp.data));
+      console.log(resp.data);
+      dispatch(getProducts(resp.data));
         
     })
     .catch((error)=> console.log(error));
   }
 }
-
-export const updateUser = (user,id)=>{
-  return function(dispatch){
-    axios.put(`${process.env.REACT_APP_API}/${id}`,user)
-    .then((resp)=>{
-        console.log("resp", resp)
-        dispatch(userUpdated());
-        dispatch(loadUsers());
-    })
-    .catch((error)=> console.log(error));
+  
+  export const deleteProduct = (id)=>{
+    return function(dispatch){
+      axios.delete(`${process.env.REACT_APP_API}/${id}`)
+      .then((resp)=>{
+          console.log("resp", resp)
+          dispatch(ProductDeleted(id));
+          dispatch(loadProducts());
+      })
+      .catch((error)=> console.log(error));
+    }
   }
-}
+
+export const addProduct = (product)=>{
+    return function(dispatch){
+      axios.post(`${process.env.REACT_APP_API}`,product)
+      .then((resp)=>{
+          console.log("resp", resp)
+          dispatch(productAdded());
+          dispatch(loadProducts());
+      })
+      .catch((error)=> console.log(error));
+    }
+  }
+
+  export const getSingleProduct = (id)=>{
+    return function(dispatch){
+      axios.get(`${process.env.REACT_APP_API}/${id}`)
+      .then((resp)=>{
+          console.log("resp", resp)
+          dispatch(getproduct(resp.data));
+      })
+      .catch((error)=> console.log(error));
+    }
+  }
+  
+  export const updateProduct = (product,id)=>{
+    return function(dispatch){
+      axios.put(`${process.env.REACT_APP_API}/${id}`,product)
+      .then((resp)=>{
+          console.log("resp", resp)
+          dispatch(productUpdated());
+          dispatch(loadProducts());
+      })
+      .catch((error)=> console.log(error));
+    }
+  }

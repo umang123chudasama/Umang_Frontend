@@ -1,22 +1,39 @@
 {
-    "users": [
-      {
-        "name": "Umang Chudasama",
-        "username": "_umangg_08",
-        "email": "umangchudasama0610@gmail.com",
-        "phone": "9974146391",
-        "website": "http://result.gujaratuniversity.ac.in/",
-        "id": "Bhowl2DG_"
-      }
-    ],
-    "users": [
-      {
-        "name": "Umang Chudasama",
-        "username": "_umangg_08",
-        "email": "umangchudasama0610@gmail.com",
-        "phone": "9974146391",
-        "website": "http://result.gujaratuniversity.ac.in/",
-        "id": "Bhowl2DG_"
-      }
-    ]
-  }
+  "products": [
+    {
+      "name": "demo",
+      "main_price": "50",
+      "dis_price": "10",
+      "category": "Mens",
+      "stock": "Instock",
+      "size": "S",
+      "img": "img1.jpg",
+      "desc": "demo",
+      "id": "HZ0Dj0K3c"
+    },
+    {
+      "name": "jens",
+      "main_price": "555",
+      "dis_price": "56",
+      "category": "Mens",
+      "stock": "Instock",
+      "size": "L",
+      "img": "img2.jpg",
+      "desc": "good",
+      "id": "HZ0Dj0K3cef"
+    }
+  ],
+  "users": [
+    {
+      "name": "demo"
+    },
+    {
+      "name": "Umang Chudasama",
+      "username": "_umangg_08",
+      "email": "umangchudasama0610@gmail",
+      "phone": "454666451",
+      "website": "http://result.gujaratuniversity.ac.in/",
+      "id": "Jyawz8AvE"
+    }
+  ]
+}

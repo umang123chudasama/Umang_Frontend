@@ -1,5 +1,7 @@
-export const GET_USER ="GET_USER";
-export const DELETE_USER ="DELETE_USER";
-export const ADD_USER ="ADD_USER";
-export const UPDATE_USER ="UPDATE_USER";
-export const GET_SINGLE_USER ="GET_SINGLE_USER";
+export const GET_PRODUCT ="GET_PRODUCT";
+export const DELETE_PRODUCT ="DELETE_USER";
+export const ADD_PRODUCT ="ADD_PRODUCT";
+export const UPDATE_PRODUCT ="UPDATE_PRODUCT";
+export const GET_SINGLE_PRODUCT ="GET_SINGLE_PRODUCT";
+
+

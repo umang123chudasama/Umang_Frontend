@@ -1,37 +1,43 @@
 import * as types from './actionType'
 
 const initialState={
+    products:[],
+    product:{},
     users:[],
     user:{},
     loading:true,
 };
 
-const userReducers=(state=initialState,action)=>{
+const dataReducer=(state=initialState,action)=>{
 
     switch(action.type){
-        case types.GET_USER:
+
+        case types.GET_PRODUCT:
             return{
                 ...state,
-                users: action.payload,
+                products: action.payload,
                 loading:false
             }
-        case types.DELETE_USER:
-        case types.ADD_USER:
-        case types.UPDATE_USER:
+        
+        case types.DELETE_PRODUCT:
+        case types.ADD_PRODUCT:
+        case types.UPDATE_PRODUCT:
             
             return{
                 ...state,
                 loading:false,
             }    
-        case types.GET_SINGLE_USER:
+        case types.GET_SINGLE_PRODUCT:
             return{
                 ...state,
-                user:action.payload,
+                product:action.payload,
                 loading:false,
             }    
+
+
         default:
             return state;
     }
 }
 
-export default userReducers;
+export default dataReducer;

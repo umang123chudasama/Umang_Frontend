@@ -25,7 +25,7 @@ function Manage_Category() {
                       <th>Category id</th>
                       <th>Name</th>
                       <th>Delete</th>
-                      <th>Edit</th>
+                      
                     </tr>
                   </thead>
                   <tbody>
@@ -34,11 +34,7 @@ function Manage_Category() {
                         <td>1</td>
                         <td>face</td> 
                           <td className="center"><button className="btn btn-danger">Delete</button></td>
-                          <td className="center"><button className="btn btn-primary">Edit</button></td>
-                         
                         </tr>
-                     
-                    
                   </tbody>
                 </table>
               </div>

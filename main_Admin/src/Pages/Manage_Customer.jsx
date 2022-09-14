@@ -1,7 +1,11 @@
 import React from 'react'
-import {NavLink} from 'react-router-dom'
+
+
 
 function Manage_Customer() {
+
+
+    
   return (
     <div>
     <div className="content-wrapper">
@@ -34,19 +38,21 @@ function Manage_Customer() {
                     </thead>
                     <tbody>
                     
-                          <tr className="odd gradeX">
-                          <td>1</td>
-                          <td>demo</td> 
-                          <td>demo</td>
-                          <td>demo</td>
-                          <td className="center"><button className="btn btn-danger">Status</button></td>
+                    <tr className="odd gradeX">
+                        <td>1</td>
+                        <td>demo</td> 
+                        <td>demo</td>
+                        <td>demo</td>
                           <td className="center"><button className="btn btn-danger">Delete</button></td>
-                          <td className="center"><NavLink to="/edit_customer"><button className='btn btn-primary' >Edit </button></NavLink></td>
-                           
-                          </tr>
-                       
-                      
-                    </tbody>
+                          <td className="center"><a href="/edit_contact"><button className='btn btn-primary' >Edit </button></a></td>
+                         
+                        </tr>
+                     
+
+                   
+                   
+                         
+                      </tbody>
                   </table>
                 </div>
               </div>

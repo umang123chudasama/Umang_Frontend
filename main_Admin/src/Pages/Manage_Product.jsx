@@ -1,7 +1,23 @@
-import React from 'react'
-import { NavLink } from 'react-router-dom'
+import React,{useEffect} from 'react'
+import { useDispatch, useSelector } from 'react-redux'
+import { Link, useNavigate,NavLink } from 'react-router-dom'
+import { deleteProduct, loadProducts } from '../Redux/actions';
 
 function Manage_Product() {
+
+  const navigate= useNavigate();
+  let dispatch = useDispatch();
+  const {products}= useSelector(state=> state.data);
+
+  useEffect(() => {
+    dispatch(loadProducts())
+  }, [])
+
+  const handledelete= (id)=>{
+    if(window.confirm("Are You Sure Wanted to Delete the product?")){
+      dispatch(deleteProduct(id));
+    }
+  }
   return (
     <div>
     <div className="content-wrapper">
@@ -16,7 +32,7 @@ function Manage_Product() {
             {/* Advanced Tables */}
             <div className="panel panel-default">
               <div className="panel-heading">
-                Customer Data
+                Product Data
               </div>
               <div className="panel-body">
                 <div className="table-responsive">
@@ -37,23 +53,26 @@ function Manage_Product() {
                       </tr>
                     </thead>
                     <tbody>
-                    
-                          <tr className="odd gradeX">
-                          <td>1</td>
-                          <td>demo</td> 
-                          <td>demo</td>
-                          <td>demo</td>
-                          <td>demo</td>
-                          <td>demo</td>
-                          <td>demo</td>
-                          <td>demo</td>
-                          <td>demo</td>
-                          <td className="center"><button className="btn btn-danger">Delete</button></td>
-                          <td className="center"><NavLink to="/edit_product"><button className='btn btn-primary' >Edit </button></NavLink></td>
-                           
-                          </tr>
-                       
-                      
+                   
+                    {
+                   products && products.map((item,index)=>(
+                    <tr key={item.id}>
+                      <td>{index+1}</td>
+                      <td><img src={item.img} width="30px"/></td>
+                      <td>{item.name}</td>
+                      <td>{item.desc}</td>
+                      <td>{item.main_price}</td>
+                      <td>{item.dis_price}</td>
+                      <td>{item.size}</td>
+                      <td>{item.category}</td>
+                      <td>{item.stock}</td>
+                      <td>
+                        <button className='btn btn-danger m-1' onClick={()=> handledelete(item.id)} >Delete</button></td>
+                       <td> <button className='btn btn-primary m-1' onClick={()=>navigate(`/edit_product/${item.id}`)}>Edit</button>
+                      </td>
+                  </tr>
+                    ))
+                }
                     </tbody>
                   </table>
                 </div>

@@ -22,7 +22,9 @@ const userReducers=(state=initialState,action)=>{
             return{
                 ...state,
                 loading:false,
-            }    
+            }   
+            
+            
         case types.GET_SINGLE_USER:
             return{
                 ...state,

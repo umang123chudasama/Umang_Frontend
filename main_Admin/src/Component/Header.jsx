@@ -30,11 +30,11 @@ function Header() {
               <ul id="menu-top" className="nav navbar-nav navbar-right">
                 <li><NavLink to="/index" className="menu-top">DASHBOARD</NavLink></li>
                 <li><NavLink to="/add_product">Add Product</NavLink></li>
-                <li><NavLink to="/add_category">Add Category</NavLink></li>
+                
                 <li><NavLink to="/manage_product">Manage Product</NavLink></li>
                 <li><NavLink to="/manage_contact">Manage Contact</NavLink></li>
                 <li><NavLink to="/manage_customer">Manage Customer</NavLink></li>
-                <li><NavLink to="/manage_category">Manage Category</NavLink></li>
+                
                 
               </ul>
             </div>
